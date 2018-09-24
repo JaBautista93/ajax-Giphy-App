@@ -13,7 +13,21 @@
           url: queryURL,
           method: "GET"
         }).then(function(response) {
-          $("#Industry-view").text(JSON.stringify(response));
+          ///need to replace this section and convert data and attach to <image tag>////
+          // Saving the image_original_url property
+          // var imageUrl = response.data.image_original_url;
+          // console.log(response)
+          // // Creating and storing an image tag
+          // var Image = $("<img>");
+
+          // // Setting the catImage src attribute to imageUrl
+          // Image.attr("src", imageUrl);
+          // Image.attr("alt", "image");
+
+          // // Prepending the catImage to the images div
+          // $("#images").prepend(Image);
+          ////// need to review code above//////
+          $("#Industry-images").text(JSON.stringify(response));
         });
       }
 
