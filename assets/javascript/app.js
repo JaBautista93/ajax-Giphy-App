@@ -7,14 +7,18 @@
       function displayIndustryInfo() {
 
         var industry = $(this).attr("data-name");
-        //var queryURL = "https://api.giphy.com/v1/gifs/random?q=" + industry + "&api_key=nSSeGzYZPVUfbyAp7r7cgvHytcq5k6sW&limit=10&rating=g";
-        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=nSSeGzYZPVUfbyAp7r7cgvHytcq5k6sW&q=robots&limit=10&offset=0&rating=G&lang=en"
+        //var queryURL = "https://api.giphy.com/v1/gifs/random?q=" + industry + "&api_key=lYTeMhGfAAag4hkOiijAv76OMQQ3n4Kn&limit=10&rating=g";
+        //var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=lYTeMhGfAAag4hkOiijAv76OMQQ3n4Kn&q=" + industry + "&limit=1&offset=0&rating=G&lang=en"
+        var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=lYTeMhGfAAag4hkOiijAv76OMQQ3n4Kn&tag=" + industry + "&rating=R"
         $.ajax({
           url: queryURL,
+          crossDomain: true,
           method: "GET"
         }).then(function(response) {
           // Saving the image_original_url property
           var imageUrl = response.data.image_original_url;
+          //var imageUrl = response.data[0].images.original.url;
+
           console.log(response)
           // // Creating and storing an image tag
           var Image = $("<img>");
