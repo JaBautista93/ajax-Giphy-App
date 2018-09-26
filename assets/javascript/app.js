@@ -7,27 +7,26 @@
       function displayIndustryInfo() {
 
         var industry = $(this).attr("data-name");
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + industries + "&api_key=nSSeGzYZPVUfbyAp7r7cgvHytcq5k6sW" + "&limit=10" + "&P";
-        
+        //var queryURL = "https://api.giphy.com/v1/gifs/random?q=" + industry + "&api_key=nSSeGzYZPVUfbyAp7r7cgvHytcq5k6sW&limit=10&rating=g";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=nSSeGzYZPVUfbyAp7r7cgvHytcq5k6sW&q=robots&limit=10&offset=0&rating=G&lang=en"
         $.ajax({
           url: queryURL,
           method: "GET"
         }).then(function(response) {
-          ///need to replace this section and convert data and attach to <image tag>////
           // Saving the image_original_url property
-          // var imageUrl = response.data.image_original_url;
-          // console.log(response)
+          var imageUrl = response.data.image_original_url;
+          console.log(response)
           // // Creating and storing an image tag
-          // var Image = $("<img>");
+          var Image = $("<img>");
 
-          // // Setting the catImage src attribute to imageUrl
-          // Image.attr("src", imageUrl);
-          // Image.attr("alt", "image");
+          // Setting the catImage src attribute to imageUrl
+          Image.attr("src", imageUrl);
+          Image.attr("alt", "Image");
 
-          // // Prepending the catImage to the images div
-          // $("#images").prepend(Image);
+          // Prepending the Image to the images div
+          $("#images").prepend(Image);
           ////// need to review code above//////
-          $("#Industry-images").text(JSON.stringify(response));
+          //$("#images").text(JSON.stringify(response));
         });
       }
 
