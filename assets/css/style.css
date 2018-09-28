@@ -17,11 +17,12 @@ body {
 .main-container {
     padding-top: 50px;
     min-height: calc(100vh - 70px);
+    height: 700PX;
   }
   
 .main-section {
     float: left;
-    width: 960px;
+    width: 660px;
     max-width: 760px;
     padding: 30px;
     margin: 0 0 40px;
@@ -38,3 +39,14 @@ body {
     color: white;  
 }
 
+.footer {
+    position: relative;
+    padding: 30px 0;
+    clear: both;
+    font-size: 12px;
+    color: black;
+    text-align: center !important;
+    height: 50px;
+    width: 100%;
+    bottom: 0;
+  } 
