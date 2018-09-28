@@ -37,7 +37,7 @@ var industries = [
 function displayIndustryInfo() {
   var industry = $(this).attr("data-name");
   var queryURL =
-    "https://api.giphy.com/v1/gifs/random?api_key=alFsnCYE0T5cudCiZ9HDCVTnefvmVdeZ=" + industry + "&rating=G";
+    "https://api.giphy.com/v1/gifs/random?api_key=alFsnCYE0T5cudCiZ9HDCVTnefvmVdeZ=" + industry + "&limit=1&rating=G";
   
     $.ajax({
     url: queryURL,
