@@ -1,34 +1,18 @@
 // Initial array of Industries
 var industries = [
-  "Building",
-  "Skyscrapper",
-  "Robot",
+  "skyscrapper",
   "Robotics",
   "Space",
   "Spaceship",
-  "Space Shuttle",
   "Car",
-  "Truck",
-  "Automotive",
-  "Motorcyle",
-  "Computer",
   "Computer Science",
   "Coding",
-  "Hacking",
-  "Camera",
-  "Photography",
-  "Airline",
+  "Aerospace",
   "Airplane",
-  "Aircraft",
-  "Boat",
   "Bridge",
-  "Civil Engineering",
-  "Farm",
   "Farming",
   "Manufacturing",
-  "Pharmacy",
-  "pharmaceutical",
-  "Doctor"
+  "medicine",
 ];
 
 //not sure how to pause the gif if I am pulling it
