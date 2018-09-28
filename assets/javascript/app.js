@@ -1,4 +1,3 @@
-///////////////This is the one that displays data and has buttons that show up on the page.  I would start with this////
 // Initial array of Industries
 var industries = [
   "Building",
@@ -32,39 +31,38 @@ var industries = [
   "Doctor"
 ];
 
-function pauseGif(){
-  var imageUrlstill = response.data.image_original_still
-  console.log(response);
-  // // Creating and storing an image tag
-  var Image = $("<img>");
+//not sure how to pause the gif if I am pulling it
+// This is the data response for still image
+// var imageUrlstill = response.data.image_original_still
+// function pauseGif(){
+//   var imageUrlstill = response.data.image_original_still
+//   console.log(response);
+//   // // Creating and storing an image tag
+//   var Image = $("<img>");
 
-  // Setting the catImage src attribute to imageUrl
-  Image.attr("src", imageUrl);
-  Image.attr("alt", "Image");
+//   // Setting the catImage src attribute to imageUrl
+//   Image.attr("src", imageUrl);
+//   Image.attr("alt", "Image");
 
-  // Prepending the Image to the images div
-  $("#images").prepend(Image);
-}
+//   // Prepending the Image to the images div
+//   $("#images").prepend(Image);
+// }
 
 
 // Function for dumping the JSON content for each button into the div
 function displayIndustryInfo() {
   var industry = $(this).attr("data-name");
-  //var queryURL = "https://api.giphy.com/v1/gifs/random?q=" + industry + "&api_key=lYTeMhGfAAag4hkOiijAv76OMQQ3n4Kn&limit=10&rating=g";
-  //var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=lYTeMhGfAAag4hkOiijAv76OMQQ3n4Kn&q=" + industry + "&limit=1&offset=0&rating=G&lang=en"
   var queryURL =
-    "https://api.giphy.com/v1/gifs/random?api_key=gRJw6s1sW7M6a4NMyE7oKRf70SoJCgFN=" +
-    industry +
-    "&rating=R";
-  $.ajax({
+    "https://api.giphy.com/v1/gifs/random?api_key=UOKdWD2F7dHczSqJE41qtLPtg7dS5fpM=" + industry + "&rating=G";
+  
+    $.ajax({
     url: queryURL,
     crossDomain: true,
     method: "GET"
   }).then(function(response) {
     // Saving the image_original_url property
-    var imageUrl = response.data.image_original_url;
-    // This is the data response for still image
-
+    //var imageUrl = response.data.image_original_url;
+    var imageUrl = response.data_rating.image_original_url;
     console.log(response);
     // // Creating and storing an image tag
     var Image = $("<img>");
@@ -77,6 +75,7 @@ function displayIndustryInfo() {
     $("#images").prepend(Image);
     //$("#images").text(JSON.stringify(response));
     $("#images").on("click", ".image", displayIndustryInfo);
+    
   });
 }
 
